@@ -17,9 +17,16 @@ function App() {
 
   function newRecipeHandler(newRecipe){
     setRecipeList((prevList) => {
-      return [newRecipe, ...prevList]
+      return [...prevList, newRecipe]
     });
-  }
+  };
+
+  function deleteRecipeHandler(recipeName) {
+    setRecipeList((prevList) => {
+      return prevList.filter(recipe => recipe.title.toString()!==recipeName.toString());
+    });
+    setShowAdd(true);
+  };
 
   function addNewHandler() {
     setShowAdd(true);
@@ -40,7 +47,7 @@ function App() {
 
   if(showAdd===false){
     content = (
-      <Description recipe={descriptionElement}></Description>
+      <Description onDelete={deleteRecipeHandler} recipe={descriptionElement}></Description>
     );
   }
 
