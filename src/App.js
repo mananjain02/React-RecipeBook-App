@@ -11,16 +11,22 @@ const RECIPE_LIST = [
 ];
 
 function App() {
-  // I need to add a delete button beneath each recipe
   const [recipeList, setRecipeList] = useState(RECIPE_LIST);
   const [showAdd, setShowAdd] = useState(true);
   const [presentName, setPresentName] = useState('');
 
   function newRecipeHandler(newRecipe){
     setRecipeList((prevList) => {
-      return [newRecipe, ...prevList]
+      return [...prevList, newRecipe]
     });
-  }
+  };
+
+  function deleteRecipeHandler(recipeName) {
+    setRecipeList((prevList) => {
+      return prevList.filter(recipe => recipe.title.toString()!==recipeName.toString());
+    });
+    setShowAdd(true);
+  };
 
   function addNewHandler() {
     setShowAdd(true);
@@ -41,7 +47,7 @@ function App() {
 
   if(showAdd===false){
     content = (
-      <Description recipe={descriptionElement}></Description>
+      <Description onDelete={deleteRecipeHandler} recipe={descriptionElement}></Description>
     );
   }
 
