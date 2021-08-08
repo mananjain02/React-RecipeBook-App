@@ -31,14 +31,17 @@ function AddNewItem(props) {
 
     function nameChangeHandler(event) {
         setName(event.target.value);
+        setPlaceholderText('');
     };
 
     function descriptionChangeHandler(event) {
         setDescription(event.target.value);
+        setPlaceholderText('');
     };
 
     function ingredientsChangeHandler(event) {
         setIngredients(event.target.value);
+        setPlaceholderText('');
     };
 
     return(
