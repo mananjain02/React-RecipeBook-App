@@ -11,7 +11,6 @@ const RECIPE_LIST = [
 ];
 
 function App() {
-  // This is edit recipe
   const [recipeList, setRecipeList] = useState(RECIPE_LIST);
   const [showAdd, setShowAdd] = useState(true);
   const [presentName, setPresentName] = useState('');
