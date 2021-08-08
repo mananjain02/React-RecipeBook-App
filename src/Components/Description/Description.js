@@ -1,6 +1,10 @@
 import './Description.css'
 
 function Description(props) {
+    function deleteButtonHandler(event) {
+        props.onDelete(event.target.value.toString());
+        return;
+    }
     return(
         <div className="description">
             <div className="description__title">{props.recipe[0].title}</div>
@@ -12,6 +16,7 @@ function Description(props) {
                 <div className="description__subtitle">Ingredients</div>
                 {props.recipe[0].ingredients}
             </div>
+            <button value={props.recipe[0].title} onClick={deleteButtonHandler} className="description__delete-button">Delete</button>
         </div>
     );
 }

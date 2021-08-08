@@ -34,3 +34,19 @@
     font-size:35px;
     font-weight: 700;
 }
+
+.description__delete-button {
+    background-color: rgb(207, 77, 77);
+    margin: 5px auto;
+    border: none;
+    border-radius: 15px;
+    height: 40px;
+    width: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.description__delete-button:hover {
+    background-color: rgb(209, 47, 47);
+}
