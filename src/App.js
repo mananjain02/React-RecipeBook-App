@@ -11,6 +11,7 @@ const RECIPE_LIST = [
 ];
 
 function App() {
+  // I need to add a delete button beneath each recipe
   const [recipeList, setRecipeList] = useState(RECIPE_LIST);
   const [showAdd, setShowAdd] = useState(true);
   const [presentName, setPresentName] = useState('');
